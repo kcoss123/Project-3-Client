@@ -6,7 +6,7 @@ export const get = (route) => {
 
   return axios.get(SERVER_URL + route, {
     headers: { Authorization: `Bearer ${token}` },
-  })
+  });
 };
 
 export const post = (route, body) => {
@@ -14,7 +14,7 @@ export const post = (route, body) => {
 
   return axios.post(SERVER_URL + route, body, {
     headers: { Authorization: `Bearer ${token}` },
-  })
+  });
 };
 
 export const put = (route, body) => {
@@ -22,7 +22,7 @@ export const put = (route, body) => {
 
   return axios.put(SERVER_URL + route, body, {
     headers: { Authorization: `Bearer ${token}` },
-  })
+  });
 };
 
 export const axiosDelete = (route) => {
@@ -30,5 +30,5 @@ export const axiosDelete = (route) => {
 
   return axios.delete(SERVER_URL + route, {
     headers: { Authorization: `Bearer ${token}` },
-  })
+  });
 };

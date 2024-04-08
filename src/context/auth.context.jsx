@@ -20,10 +20,10 @@ function AuthProvider({ children }) {
     will be added here later in the next step
   */
 
-  const storeToken = (token) => {
-    //  <==  ADD
-    localStorage.setItem("authToken", token);
-  };
+    const storeToken = (token) => {
+      // <==  ADD
+      localStorage.setItem("authToken", token);
+    };
 
   const removeToken = () => {
     // <== ADD
@@ -35,9 +35,10 @@ function AuthProvider({ children }) {
     //  <==  ADD
     // Get the stored token from the localStorage
     const storedToken = localStorage.getItem("authToken");
-
+    
     // If the token exists in the localStorage
     if (storedToken) {
+      
       // We must send the JWT token in the request's "Authorization" Headers
       get("/auth/verify")
         .then((response) => {
@@ -83,6 +84,7 @@ function AuthProvider({ children }) {
         isLoggedIn,
         isLoading,
         user,
+        setUser,
         storeToken,
         authenticateUser,
         logOutUser,
